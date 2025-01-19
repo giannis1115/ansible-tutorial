@@ -1,2 +1,14 @@
+[ubuntu_servers]
+192.168.181.128 ansible_user=server1
+
+[alma_servers]
+192.168.181.130 ansible_user=user1
+
+[web_servers]
 192.168.181.128 ansible_user=server1
 192.168.181.130 ansible_user=user1
+
+[db_servers]
+192.168.181.128 ansible_user=server1
+
+[file_servers]

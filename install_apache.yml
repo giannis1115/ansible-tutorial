@@ -4,38 +4,10 @@
   become: true
   tasks:
 
-  - name: update repository index for Ubuntu
-    apt:
+  - name: install apache and php package
+    package:
       update_cache: yes
-    when: ansible_distribution == "Ubuntu"
-
-  - name: install apache2 package for Ubuntu
-    apt:
-      name: apache2
+      name:
+        - "{{ apache package }}"
+        - "{{ php package }}"
       state: latest
-    when: ansible_distribution == "Ubuntu"
-
-  - name: add php support for apache for Ubuntu
-    apt:
-      name: libapache2-mod-php
-      state: latest
-    when: ansible_distribution == "Ubuntu"
-
-  - name: update repository index for Alma
-    dnf:
-      update_cache: yes
-    when: ansible_distribution == "Alma"
-
-  - name: install apache package for Alma
-    dnf:
-      name: httpd
-      state: latest
-    when: ansible_distribution == "Alma"
-
-  - name: add php support for apache for Alma
-    dnf:
-      name: php
-      state: latest
-    when: ansible_distribution == "Alma"
-
-
