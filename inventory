@@ -12,3 +12,6 @@
 192.168.181.128 ansible_user=server1
 
 [file_servers]
+
+[workstations]
+192.168.181.129
